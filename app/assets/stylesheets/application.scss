@@ -1,0 +1,94 @@
+//
+// This is a manifest file that'll be compiled into application.css, which will include all the files
+// listed below.
+//
+// Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+// vendor/assets/stylesheets directory can be referenced here using a relative path.
+//
+// You're free to add application-wide styles to this file and they'll appear at the bottom of the
+// compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+// files in this directory. Styles in this file should be added after the last require_* statement.
+// It is generally better to create a new file per style scope.
+//
+//= require_tree .
+//= require_self
+//= require font-awesome
+//
+
+@import "font-awesome";
+@import "materialize";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$app_color: #EF6C00;
+
+.navbar-default {
+	font-weight: bold;
+	background-color: white;
+
+	a:hover {
+		text-decoration:none;
+	}
+	margin-bottom: 5px;
+	text-decoration: none;
+
+	.navbar-brand {
+		margin-left: 20px;
+		img {	
+				display: inline-block;
+				vertical-align: top;
+				transform: translateZ(0);
+				box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+				backface-visibility: hidden;
+				-moz-osx-font-smoothing: grayscale;
+				transition-duration: 0.3s;
+				transition-property: transform;
+				transition-timing-function: ease-out;
+			}
+		span {
+			color: $app_color;
+		}
+		&:hover {
+			img {
+			transform: translateY(-8px);
+			color: $app_color;
+			}
+		};
+
+	}
+	.combo-btn {
+		font-size: 20px;
+		li {
+			margin-right: 30px;
+
+			display: inline-block;
+		}
+		a {
+			color: $app_color;
+			&:after {
+ 				content: '';
+ 				display: block;
+ 				margin: auto;
+ 				height: 3px;
+ 				width: 0px;
+ 				background: transparent;
+ 				transition: width .5s ease, background-color .5s ease;
+ 			}
+ 			&:hover:after{
+ 				width: 100%;
+ 			    background: linear-gradient(to right, #FFEE58 0%, $app_color 50%, #FFEE58 100%);
+ 			}
+ 			&:hover {
+ 				color: $app_color;
+ 				background: transparent;
+  			}
+  			&:focus {
+  				text-decoration: none;
+  			}
+		}
+	}
+	ul.combo-btn {
+		height: 100%;
+		padding: 12px;
+	}
+}
