@@ -1,0 +1,14 @@
+<div>
+	<div>
+		<h3>Learnt Kanji<h3>
+		<% @learntKanji.each do |x| %>
+			<%= render 'shared/kanji', kanji: x %>
+		<% end %>
+	</div>
+	<div>
+		<h3>Haven't learnt Kanji<h3>
+		<% @notLearnKanji.each do |x| %>
+			<%= render 'shared/kanji', kanji: x %>
+		<% end %>
+	</div>
+</div>
